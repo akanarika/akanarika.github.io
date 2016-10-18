@@ -23,6 +23,19 @@
   
   <link rel="stylesheet" href="/css/style.css">
   
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-85902007-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
 
 </head>
 
@@ -59,6 +72,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Compare-None-in-Python" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/17/Compare-None-in-Python/" class="article-date">
+  <time datetime="2016-10-17T23:56:12.000Z" itemprop="datePublished">2016-10-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/17/Compare-None-in-Python/">&#39;Is None&#39; vs &#39;== None&#39; in Python</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>The reason for choosing<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">egg <span class="keyword">is</span> <span class="keyword">None</span></div></pre></td></tr></table></figure></p>
+<p>over<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">egg == <span class="keyword">None</span></div></pre></td></tr></table></figure></p>
+<p>is: The operator “==” can be overloaded, and is likely to break when comparing valid object with None, while “is” always works the same.<br><a href="&quot;http://stackoverflow.com/questions/3289601/null-object-in-python">Stack Overflow Answer</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dudandan.com/2016/10/17/Compare-None-in-Python/" data-id="ciueqapqy0002nf87crjf159f" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Class-definition-in-Python" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/10/15/Class-definition-in-Python/" class="article-date">
@@ -92,7 +144,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dudandan.com/2016/10/15/Class-definition-in-Python/" data-id="ciubw6ivj0000pf87om90ir6r" class="article-share-link">Share</a>
+      <a data-url="http://dudandan.com/2016/10/15/Class-definition-in-Python/" data-id="ciueqapqv0001nf87qc87l7on" class="article-share-link">Share</a>
       
       
     </footer>
@@ -137,7 +189,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dudandan.com/2016/10/11/hello-world/" data-id="ciubw6ivp0001pf8773xef33o" class="article-share-link">Share</a>
+      <a data-url="http://dudandan.com/2016/10/11/hello-world/" data-id="ciueqapqp0000nf8762b671al" class="article-share-link">Share</a>
       
       
     </footer>
@@ -175,6 +227,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/10/17/Compare-None-in-Python/">&#39;Is None&#39; vs &#39;== None&#39; in Python</a>
+          </li>
         
           <li>
             <a href="/2016/10/15/Class-definition-in-Python/">Class definition in Python</a>
