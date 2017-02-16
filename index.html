@@ -72,6 +72,46 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-Setup-glfw-and-glew" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/15/Setup-glfw-and-glew/" class="article-date">
+  <time datetime="2017-02-16T04:02:17.000Z" itemprop="datePublished">2017-02-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/15/Setup-glfw-and-glew/">Setup glfw and glew</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>I used OpenGL more than once before. However, every time I have to start a new OpenGL project, it would be like the first time. Because I will encounter so many new problems or old which I don’t remember. Today I used XCode to build a very simple program, but there turned out to be some fresh errors.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">Undefined symbols for architecture x86_64:</div><div class="line">  &quot;_glewExperimental&quot;, referenced from:</div><div class="line">      _main in main-8eb2b0.o</div><div class="line">  &quot;_glewInit&quot;, referenced from:</div><div class="line">      _main in main-8eb2b0.o</div><div class="line">  &quot;_glfwCreateWindow&quot;, referenced from:</div><div class="line">      _main in main-8eb2b0.o</div><div class="line">  &quot;_glfwInit&quot;, referenced from:</div><div class="line">      _main in main-8eb2b0.o</div><div class="line">  &quot;_glfwMakeContextCurrent&quot;, referenced from:</div><div class="line">      _main in main-8eb2b0.o</div><div class="line">  &quot;_glfwTerminate&quot;, referenced from:</div><div class="line">      _main in main-8eb2b0.o</div><div class="line">  &quot;_glfwWindowHint&quot;, referenced from:</div><div class="line">      _main in main-8eb2b0.o</div><div class="line">ld: symbol(s) not found for architecture x86_64</div><div class="line">clang: error: linker command failed with exit code 1 (use -v to see invocation)</div></pre></td></tr></table></figure></p>
+<p>Actually they are not special at all. It’s just because those libraries were not completely installed or linked(I guess). But the challenge today is my Homebrew and Macport also broke down like they intend(probrably because I haven’t used them for a long time). Then to solve the problem. I used the very universal solution: reinstall everything - homebrew, macport, glew, glfw3. Then it worked. But it took me incredibly hours.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gcc -o main main.cpp -framework OpenGL -framework GLUT <span class="_">-l</span>GLEW -lglfw3</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dudandan.com/2017/02/15/Setup-glfw-and-glew/" data-id="ciz7vhq1c000f9qjktyp7sju0" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/notes/">notes</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Thinking-about-IK" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/02/08/Thinking-about-IK/" class="article-date">
@@ -99,7 +139,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dudandan.com/2017/02/08/Thinking-about-IK/" data-id="ciyx5bu1x0008zt87a16zsxpz" class="article-share-link">Share</a>
+      <a data-url="http://dudandan.com/2017/02/08/Thinking-about-IK/" data-id="ciz7vhq0w00059qjkhq40drvy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/15664/">15664</a></li></ul>
@@ -139,7 +179,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dudandan.com/2017/02/03/Get-to-know-MoCap/" data-id="ciyx5bu1e0001zt872rmev3q4" class="article-share-link">Share</a>
+      <a data-url="http://dudandan.com/2017/02/03/Get-to-know-MoCap/" data-id="ciz7vhq0r00039qjky15sfu2x" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/15664/">15664</a></li></ul>
@@ -184,7 +224,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dudandan.com/2017/01/26/Hello-Technical-Animation/" data-id="ciyx5bu1q0004zt8790rd2wvv" class="article-share-link">Share</a>
+      <a data-url="http://dudandan.com/2017/01/26/Hello-Technical-Animation/" data-id="ciz7vhq14000a9qjk1pxjmbm3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/15664/">15664</a></li></ul>
@@ -223,7 +263,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dudandan.com/2016/11/13/Reverse-Linked-List-in-Python/" data-id="ciyx5bu20000azt87dn4zia9h" class="article-share-link">Share</a>
+      <a data-url="http://dudandan.com/2016/11/13/Reverse-Linked-List-in-Python/" data-id="ciz7vhq0u00049qjk10cus8af" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -263,7 +303,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dudandan.com/2016/11/12/Replace-a-list-in-Python/" data-id="ciyx5bu1t0005zt870bjtou8e" class="article-share-link">Share</a>
+      <a data-url="http://dudandan.com/2016/11/12/Replace-a-list-in-Python/" data-id="ciz7vhq1000089qjkjhyas7zq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -305,7 +345,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dudandan.com/2016/10/17/Compare-None-in-Python/" data-id="ciyx5bu1n0003zt87ak54gjzf" class="article-share-link">Share</a>
+      <a data-url="http://dudandan.com/2016/10/17/Compare-None-in-Python/" data-id="ciz7vhq0c00009qjk1x3gg0kp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -350,7 +390,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dudandan.com/2016/10/15/Class-definition-in-Python/" data-id="ciyx5bu180000zt87u4mzdpyu" class="article-share-link">Share</a>
+      <a data-url="http://dudandan.com/2016/10/15/Class-definition-in-Python/" data-id="ciz7vhq0i00019qjkand08u2c" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -397,7 +437,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dudandan.com/2016/10/11/hello-world/" data-id="ciyx5bu2m000izt87lxljx215" class="article-share-link">Share</a>
+      <a data-url="http://dudandan.com/2016/10/11/hello-world/" data-id="ciz7vhq1a000d9qjkqa0u0rzi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -419,7 +459,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/15664/">15664</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/15664/">15664</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/notes/">notes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li></ul>
     </div>
   </div>
 
@@ -442,6 +482,10 @@ ga('send', 'pageview');
       <ul>
         
           <li>
+            <a href="/2017/02/15/Setup-glfw-and-glew/">Setup glfw and glew</a>
+          </li>
+        
+          <li>
             <a href="/2017/02/08/Thinking-about-IK/">Thinking about IK</a>
           </li>
         
@@ -455,10 +499,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2016/11/13/Reverse-Linked-List-in-Python/">Reverse Linked List in Python</a>
-          </li>
-        
-          <li>
-            <a href="/2016/11/12/Replace-a-list-in-Python/">Replace a list in Python</a>
           </li>
         
       </ul>

@@ -3,33 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Class definition in Python | DDD</title>
+  <title>Setup glfw and glew | DDD</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Python 3.x:1class NewClass(object):
-new-style class1class NewClass:
-new-style class implicitly inherits from object
-Python 2.x:1class NewClass(object):
-new-style class1class NewClass:
-old-style class(">
+  <meta name="description" content="I used OpenGL more than once before. However, every time I have to start a new OpenGL project, it would be like the first time. Because I will encounter so many new problems or old which I don’t remem">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Class definition in Python">
-<meta property="og:url" content="http://dudandan.com/2016/10/15/Class-definition-in-Python/index.html">
+<meta property="og:title" content="Setup glfw and glew">
+<meta property="og:url" content="http://dudandan.com/2017/02/15/Setup-glfw-and-glew/index.html">
 <meta property="og:site_name" content="DDD">
-<meta property="og:description" content="Python 3.x:1class NewClass(object):
-new-style class1class NewClass:
-new-style class implicitly inherits from object
-Python 2.x:1class NewClass(object):
-new-style class1class NewClass:
-old-style class(">
-<meta property="og:updated_time" content="2017-01-26T22:17:37.000Z">
+<meta property="og:description" content="I used OpenGL more than once before. However, every time I have to start a new OpenGL project, it would be like the first time. Because I will encounter so many new problems or old which I don’t remem">
+<meta property="og:updated_time" content="2017-02-16T04:14:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Class definition in Python">
-<meta name="twitter:description" content="Python 3.x:1class NewClass(object):
-new-style class1class NewClass:
-new-style class implicitly inherits from object
-Python 2.x:1class NewClass(object):
-new-style class1class NewClass:
-old-style class(">
+<meta name="twitter:title" content="Setup glfw and glew">
+<meta name="twitter:description" content="I used OpenGL more than once before. However, every time I have to start a new OpenGL project, it would be like the first time. Because I will encounter so many new problems or old which I don’t remem">
   
   
     <link rel="icon" href="/favicon.png">
@@ -86,10 +71,10 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Class-definition-in-Python" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Setup-glfw-and-glew" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/10/15/Class-definition-in-Python/" class="article-date">
-  <time datetime="2016-10-15T23:57:44.000Z" itemprop="datePublished">2016-10-15</time>
+    <a href="/2017/02/15/Setup-glfw-and-glew/" class="article-date">
+  <time datetime="2017-02-16T04:02:17.000Z" itemprop="datePublished">2017-02-15</time>
 </a>
     
   </div>
@@ -100,7 +85,7 @@ ga('send', 'pageview');
         
   
     <h1 class="article-title" itemprop="name">
-      Class definition in Python
+      Setup glfw and glew
     </h1>
   
 
@@ -108,21 +93,16 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>Python 3.x:</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">NewClass</span><span class="params">(object)</span>:</span></div></pre></td></tr></table></figure></p>
-<p>new-style class<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">NewClass</span>:</span></div></pre></td></tr></table></figure></p>
-<p>new-style class implicitly inherits from object</p>
-<p><strong>Python 2.x:</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">NewClass</span><span class="params">(object)</span>:</span></div></pre></td></tr></table></figure></p>
-<p>new-style class<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">NewClass</span>:</span></div></pre></td></tr></table></figure></p>
-<p>old-style class(quite old, don’t use)</p>
-<p>reference page:<br><a href="http://stackoverflow.com/questions/4015417/python-class-inherits-object" target="_blank" rel="external">Stack Overflow Answer</a><br><a href="https://docs.python.org/2/reference/datamodel.html#new-style-and-classic-classes" target="_blank" rel="external">Python Doc Discussion</a></p>
+        <p>I used OpenGL more than once before. However, every time I have to start a new OpenGL project, it would be like the first time. Because I will encounter so many new problems or old which I don’t remember. Today I used XCode to build a very simple program, but there turned out to be some fresh errors.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">Undefined symbols for architecture x86_64:</div><div class="line">  &quot;_glewExperimental&quot;, referenced from:</div><div class="line">      _main in main-8eb2b0.o</div><div class="line">  &quot;_glewInit&quot;, referenced from:</div><div class="line">      _main in main-8eb2b0.o</div><div class="line">  &quot;_glfwCreateWindow&quot;, referenced from:</div><div class="line">      _main in main-8eb2b0.o</div><div class="line">  &quot;_glfwInit&quot;, referenced from:</div><div class="line">      _main in main-8eb2b0.o</div><div class="line">  &quot;_glfwMakeContextCurrent&quot;, referenced from:</div><div class="line">      _main in main-8eb2b0.o</div><div class="line">  &quot;_glfwTerminate&quot;, referenced from:</div><div class="line">      _main in main-8eb2b0.o</div><div class="line">  &quot;_glfwWindowHint&quot;, referenced from:</div><div class="line">      _main in main-8eb2b0.o</div><div class="line">ld: symbol(s) not found for architecture x86_64</div><div class="line">clang: error: linker command failed with exit code 1 (use -v to see invocation)</div></pre></td></tr></table></figure></p>
+<p>Actually they are not special at all. It’s just because those libraries were not completely installed or linked(I guess). But the challenge today is my Homebrew and Macport also broke down like they intend(probrably because I haven’t used them for a long time). Then to solve the problem. I used the very universal solution: reinstall everything - homebrew, macport, glew, glfw3. Then it worked. But it took me incredibly hours.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gcc -o main main.cpp -framework OpenGL -framework GLUT <span class="_">-l</span>GLEW -lglfw3</div></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dudandan.com/2016/10/15/Class-definition-in-Python/" data-id="ciz7vhq0i00019qjkand08u2c" class="article-share-link">Share</a>
+      <a data-url="http://dudandan.com/2017/02/15/Setup-glfw-and-glew/" data-id="ciz7vhq1c000f9qjktyp7sju0" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/notes/">notes</a></li></ul>
 
     </footer>
   </div>
@@ -130,19 +110,10 @@ ga('send', 'pageview');
     
 <nav id="article-nav">
   
-    <a href="/2016/10/17/Compare-None-in-Python/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          &#39;Is None&#39; vs &#39;== None&#39; in Python
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/10/11/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/02/08/Thinking-about-IK/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
+      <div class="article-nav-title">Thinking about IK</div>
     </a>
   
 </nav>
