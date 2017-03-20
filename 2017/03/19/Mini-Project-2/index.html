@@ -3,18 +3,30 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Reverse Linked List in Python | DDD</title>
+  <title>Mini Project 2 | DDD</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="A really fancy way to reverse a linked list in Python:12345def reverseList(head):	new_head = None	while head:		head.next, head, new_head = new_head, head.next, head	return new_head">
+  <meta name="description" content="Cloth simulationCloth simulation with mass spring method and constraint based method in C++ and OpenGL.
+
+Features
+Simulating method can be choosen from mass spring and constraint based
+Object collisio">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Reverse Linked List in Python">
-<meta property="og:url" content="http://dudandan.com/2016/11/13/Reverse-Linked-List-in-Python/index.html">
+<meta property="og:title" content="Mini Project 2">
+<meta property="og:url" content="http://dudandan.com/2017/03/19/Mini-Project-2/index.html">
 <meta property="og:site_name" content="DDD">
-<meta property="og:description" content="A really fancy way to reverse a linked list in Python:12345def reverseList(head):	new_head = None	while head:		head.next, head, new_head = new_head, head.next, head	return new_head">
-<meta property="og:updated_time" content="2017-01-26T22:35:14.000Z">
+<meta property="og:description" content="Cloth simulationCloth simulation with mass spring method and constraint based method in C++ and OpenGL.
+
+Features
+Simulating method can be choosen from mass spring and constraint based
+Object collisio">
+<meta property="og:updated_time" content="2017-03-20T02:35:58.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Reverse Linked List in Python">
-<meta name="twitter:description" content="A really fancy way to reverse a linked list in Python:12345def reverseList(head):	new_head = None	while head:		head.next, head, new_head = new_head, head.next, head	return new_head">
+<meta name="twitter:title" content="Mini Project 2">
+<meta name="twitter:description" content="Cloth simulationCloth simulation with mass spring method and constraint based method in C++ and OpenGL.
+
+Features
+Simulating method can be choosen from mass spring and constraint based
+Object collisio">
   
   
     <link rel="icon" href="/favicon.png">
@@ -71,10 +83,10 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Reverse-Linked-List-in-Python" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Mini-Project-2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/11/13/Reverse-Linked-List-in-Python/" class="article-date">
-  <time datetime="2016-11-13T06:34:34.000Z" itemprop="datePublished">2016-11-13</time>
+    <a href="/2017/03/19/Mini-Project-2/" class="article-date">
+  <time datetime="2017-03-20T02:33:40.000Z" itemprop="datePublished">2017-03-19</time>
 </a>
     
   </div>
@@ -85,7 +97,7 @@ ga('send', 'pageview');
         
   
     <h1 class="article-title" itemprop="name">
-      Reverse Linked List in Python
+      Mini Project 2
     </h1>
   
 
@@ -93,15 +105,112 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>A really fancy way to reverse a linked list in Python:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">reverseList</span><span class="params">(head)</span>:</span></div><div class="line">	new_head = <span class="keyword">None</span></div><div class="line">	<span class="keyword">while</span> head:</div><div class="line">		head.next, head, new_head = new_head, head.next, head</div><div class="line">	<span class="keyword">return</span> new_head</div></pre></td></tr></table></figure></p>
+        <h1 id="Cloth-simulation"><a href="#Cloth-simulation" class="headerlink" title="Cloth simulation"></a>Cloth simulation</h1><p>Cloth simulation with mass spring method and constraint based method in C++ and OpenGL.</p>
+<div class="video-container"><iframe src="//player.vimeo.com/video/209126665" frameborder="0" allowfullscreen></iframe></div>
+<h3 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h3><ul>
+<li>Simulating method can be choosen from <a href="http://creativecoding.evl.uic.edu/courses/cs488/finalprojects/cloth/cloth.pdf" target="_blank" rel="external"><strong>mass spring</strong></a> and <a href="http://www.cs.cmu.edu/~ytoh/stickyfingers.pdf" target="_blank" rel="external"><strong>constraint based</strong></a></li>
+<li>Object collision</li>
+<li>Wind</li>
+<li>Stiffness increase / decrease</li>
+<li>Tearable</li>
+<li>View / Shading mode options</li>
+</ul>
+<h3 id="How-to-use"><a href="#How-to-use" class="headerlink" title="How to use"></a>How to use</h3><p>In terminal, under current folder<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ make</div><div class="line">$ ./main -r 30 -c 30 -m 0 -p 0</div></pre></td></tr></table></figure></p>
+<p>To run with different parameters</p>
+<table>
+<thead>
+<tr>
+<th>Opt</th>
+<th>Meaning</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-r</td>
+<td>grid row count</td>
+<td>[3, 30]</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>grid column count</td>
+<td>[3, 30]</td>
+</tr>
+<tr>
+<td>-m</td>
+<td>mode</td>
+<td>0 ( mass spring ), 1 ( constraint based )</td>
+</tr>
+<tr>
+<td>-p</td>
+<td>pin 2 or 4 points</td>
+<td>0(2), 1(4)</td>
+</tr>
+</tbody>
+</table>
+<p>In the window, to change the view or interact with the cloth</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>W/A/S/D</td>
+<td>Move the view</td>
+</tr>
+<tr>
+<td>mouse scrolling</td>
+<td>Scale the view</td>
+</tr>
+<tr>
+<td>R</td>
+<td>Reset to default view</td>
+</tr>
+<tr>
+<td>T</td>
+<td>Change to side view</td>
+</tr>
+<tr>
+<td>E (hold) + mouse</td>
+<td>Rotate the view</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>Turn on/off the wind</td>
+</tr>
+<tr>
+<td>X/C</td>
+<td>Increase/Decrease spring stiffness</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>Toggle wireframe/shaded mode</td>
+</tr>
+<tr>
+<td>I/J/K/L/U/O</td>
+<td>Move the ball</td>
+</tr>
+<tr>
+<td>[</td>
+<td>Decrease the ball radius</td>
+</tr>
+<tr>
+<td>]</td>
+<td>Increase the ball radius</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dudandan.com/2016/11/13/Reverse-Linked-List-in-Python/" data-id="cj0hi23ow00064wjk0w8wj1dx" class="article-share-link">Partager</a>
+      <a data-url="http://dudandan.com/2017/03/19/Mini-Project-2/" data-id="cj0hi23ou00054wjkpdc1br2w" class="article-share-link">Partager</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/15664/">15664</a></li></ul>
 
     </footer>
   </div>
@@ -109,19 +218,10 @@ ga('send', 'pageview');
     
 <nav id="article-nav">
   
-    <a href="/2017/01/26/Hello-Technical-Animation/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Récent</strong>
-      <div class="article-nav-title">
-        
-          Hello Technical Animation
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/11/12/Replace-a-list-in-Python/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/02/20/Mini-Project-1/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Ancien</strong>
-      <div class="article-nav-title">Replace a list in Python</div>
+      <div class="article-nav-title">Mini Project 1</div>
     </a>
   
 </nav>
