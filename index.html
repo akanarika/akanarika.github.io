@@ -95,7 +95,7 @@ ga('send', 'pageview');
     <div class="article-entry" itemprop="articleBody">
       
         <p>In Leetcode problem <a href="https://leetcode.com/problems/evaluate-reverse-polish-notation/#/description" target="_blank" rel="external">150. Evaluate Reverse Polish Notation</a>, a test case<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[&quot;10&quot;,&quot;6&quot;,&quot;9&quot;,&quot;3&quot;,&quot;+&quot;,&quot;-11&quot;,&quot;&quot;,&quot;/&quot;,&quot;&quot;,&quot;17&quot;,&quot;+&quot;,&quot;5&quot;,&quot;+&quot;]</div></pre></td></tr></table></figure></p>
-<p>gave a wrong answer. After looking into it, it turned out that Python caculate 6 / (-132) as -1, which seems weird to me.<br>The reason why that happens is that Python’s default division of intergets returns the floor (towards negitive infinity). A simple way to avoid this is to use<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">result = int(float(a) / b).</div></pre></td></tr></table></figure></p>
+<p>gave a wrong answer.<br>After looking into it, it turned out that Python caculates 6 / (-132) as -1, which seems weird to me.<br>The reason why that happened is that Python’s default division of intergers returns the floor(towards negitive infinity).<br>A simple way to avoid this is to use<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">result = int(float(a) / b).</div></pre></td></tr></table></figure></p>
 
       
     </div>
