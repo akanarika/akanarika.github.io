@@ -3,30 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Mini Project 2 | DDD</title>
+  <title>const T&amp; xx | DDD</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Cloth simulationCloth simulation with mass spring method and constraint based method in C++ and OpenGL.
-
-Features
-Simulating method can be choosen from mass spring and constraint based
-Object collisio">
+  <meta name="description" content="Start on a new page. Following Scratchapixel to review and learn graphics. In the first lesson, a constructor
+1Vec3(const T &amp;amp;xx) : x(xx), y(xx), z(xx) &amp;#123;&amp;#125;
+in class Vec3 is used. As a weak">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mini Project 2">
-<meta property="og:url" content="http://dudandan.com/2017/03/19/Mini-Project-2/index.html">
+<meta property="og:title" content="const T& xx">
+<meta property="og:url" content="http://dudandan.com/2017/05/29/const-T-and-xx/index.html">
 <meta property="og:site_name" content="DDD">
-<meta property="og:description" content="Cloth simulationCloth simulation with mass spring method and constraint based method in C++ and OpenGL.
-
-Features
-Simulating method can be choosen from mass spring and constraint based
-Object collisio">
-<meta property="og:updated_time" content="2017-03-20T02:35:58.000Z">
+<meta property="og:description" content="Start on a new page. Following Scratchapixel to review and learn graphics. In the first lesson, a constructor
+1Vec3(const T &amp;amp;xx) : x(xx), y(xx), z(xx) &amp;#123;&amp;#125;
+in class Vec3 is used. As a weak">
+<meta property="og:updated_time" content="2017-05-29T05:33:15.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mini Project 2">
-<meta name="twitter:description" content="Cloth simulationCloth simulation with mass spring method and constraint based method in C++ and OpenGL.
-
-Features
-Simulating method can be choosen from mass spring and constraint based
-Object collisio">
+<meta name="twitter:title" content="const T& xx">
+<meta name="twitter:description" content="Start on a new page. Following Scratchapixel to review and learn graphics. In the first lesson, a constructor
+1Vec3(const T &amp;amp;xx) : x(xx), y(xx), z(xx) &amp;#123;&amp;#125;
+in class Vec3 is used. As a weak">
   
   
     <link rel="icon" href="/favicon.png">
@@ -83,10 +77,10 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Mini-Project-2" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-const-T-and-xx" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/03/19/Mini-Project-2/" class="article-date">
-  <time datetime="2017-03-20T02:33:40.000Z" itemprop="datePublished">2017-03-19</time>
+    <a href="/2017/05/29/const-T-and-xx/" class="article-date">
+  <time datetime="2017-05-29T05:24:55.000Z" itemprop="datePublished">2017-05-29</time>
 </a>
     
   </div>
@@ -97,7 +91,7 @@ ga('send', 'pageview');
         
   
     <h1 class="article-title" itemprop="name">
-      Mini Project 2
+      const T&amp; xx
     </h1>
   
 
@@ -105,112 +99,22 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Cloth-simulation"><a href="#Cloth-simulation" class="headerlink" title="Cloth simulation"></a>Cloth simulation</h1><p>Cloth simulation with mass spring method and constraint based method in C++ and OpenGL.</p>
-<div class="video-container"><iframe src="//player.vimeo.com/video/209126665" frameborder="0" allowfullscreen></iframe></div>
-<h3 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h3><ul>
-<li>Simulating method can be choosen from <a href="http://creativecoding.evl.uic.edu/courses/cs488/finalprojects/cloth/cloth.pdf" target="_blank" rel="external"><strong>mass spring</strong></a> and <a href="http://www.cs.cmu.edu/~ytoh/stickyfingers.pdf" target="_blank" rel="external"><strong>constraint based</strong></a></li>
-<li>Object collision</li>
-<li>Wind</li>
-<li>Stiffness increase / decrease</li>
-<li>Tearable</li>
-<li>View / Shading mode options</li>
-</ul>
-<h3 id="How-to-use"><a href="#How-to-use" class="headerlink" title="How to use"></a>How to use</h3><p>In terminal, under current folder<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ make</div><div class="line">$ ./main -r 30 -c 30 -m 0 -p 0</div></pre></td></tr></table></figure></p>
-<p>To run with different parameters</p>
-<table>
-<thead>
-<tr>
-<th>Opt</th>
-<th>Meaning</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>-r</td>
-<td>grid row count</td>
-<td>[3, 30]</td>
-</tr>
-<tr>
-<td>-c</td>
-<td>grid column count</td>
-<td>[3, 30]</td>
-</tr>
-<tr>
-<td>-m</td>
-<td>mode</td>
-<td>0 ( mass spring ), 1 ( constraint based )</td>
-</tr>
-<tr>
-<td>-p</td>
-<td>pin 2 or 4 points</td>
-<td>0(2), 1(4)</td>
-</tr>
-</tbody>
-</table>
-<p>In the window, to change the view or interact with the cloth</p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>W/A/S/D</td>
-<td>Move the view</td>
-</tr>
-<tr>
-<td>mouse scrolling</td>
-<td>Scale the view</td>
-</tr>
-<tr>
-<td>R</td>
-<td>Reset to default view</td>
-</tr>
-<tr>
-<td>T</td>
-<td>Change to side view</td>
-</tr>
-<tr>
-<td>E (hold) + mouse</td>
-<td>Rotate the view</td>
-</tr>
-<tr>
-<td>Z</td>
-<td>Turn on/off the wind</td>
-</tr>
-<tr>
-<td>X/C</td>
-<td>Increase/Decrease spring stiffness</td>
-</tr>
-<tr>
-<td>Y</td>
-<td>Toggle wireframe/shaded mode</td>
-</tr>
-<tr>
-<td>I/J/K/L/U/O</td>
-<td>Move the ball</td>
-</tr>
-<tr>
-<td>[</td>
-<td>Decrease the ball radius</td>
-</tr>
-<tr>
-<td>]</td>
-<td>Increase the ball radius</td>
-</tr>
-</tbody>
-</table>
+        <p>Start on a new page. Following <a href="https://www.scratchapixel.com" target="_blank" rel="external">Scratchapixel</a> to review and learn graphics. In the first lesson, a constructor</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Vec3(<span class="keyword">const</span> T &amp;xx) : x(xx), y(xx), z(xx) &#123;&#125;</div></pre></td></tr></table></figure>
+<p>in class Vec3 is used. As a weak learner of c++, I’m confused about the parameter passing here. Why using const T &amp;xx?<br>An answer on the stack overflow solved my question.</p>
+<p><a href="https://stackoverflow.com/questions/2627166/difference-between-const-reference-and-normal-parameter" target="_blank" rel="external">post</a><br>What’s the difference?</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">DoWork</span><span class="params">(<span class="keyword">int</span> n)</span></span>;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">DoWork</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> &amp;n)</span></span>;</div></pre></td></tr></table></figure>
+<p>Answer:<br>The difference is more prominent when you are passing a big struct/class.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">struct</span> MyData &#123;</div><div class="line">    <span class="keyword">int</span> a,b,c,d,e,f,g,h;</div><div class="line">    <span class="keyword">long</span> <span class="built_in">array</span>[<span class="number">1234</span>];</div><div class="line">&#125;;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">DoWork</span><span class="params">(MyData md)</span></span>;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">DoWork</span><span class="params">(<span class="keyword">const</span> MyData&amp; md)</span></span>;</div></pre></td></tr></table></figure>
+<p>When you use use ‘normal’ parameter, you pass the parameter by value and hence creating a copy of the parameter you pass. if you are using const reference, you pass it by reference and the original data is not copied.<br>In both cases, the original data cannot be modified from inside the function.<br>EDIT:<br>In certain cases, the original data might be able to get modified as pointed out by Charles Bailey in his answer.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dudandan.com/2017/03/19/Mini-Project-2/" data-id="cj39p7xcj000a2ajk9755v5gd" class="article-share-link">Share</a>
+      <a data-url="http://dudandan.com/2017/05/29/const-T-and-xx/" data-id="cj39p7xcw000j2ajkabr2tfbt" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/15664/">15664</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cpp/">cpp</a></li></ul>
 
     </footer>
   </div>
@@ -218,19 +122,10 @@ ga('send', 'pageview');
     
 <nav id="article-nav">
   
-    <a href="/2017/03/30/6-132-1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          6 / (-132) = -1 ?
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/02/20/Mini-Project-1/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/04/28/Speaking-of-rendering/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Mini Project 1</div>
+      <div class="article-nav-title">Speaking of rendering</div>
     </a>
   
 </nav>

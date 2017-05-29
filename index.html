@@ -72,6 +72,52 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-const-T-and-xx" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/05/29/const-T-and-xx/" class="article-date">
+  <time datetime="2017-05-29T05:24:55.000Z" itemprop="datePublished">2017-05-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/29/const-T-and-xx/">const T&amp; xx</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Start on a new page. Following <a href="https://www.scratchapixel.com" target="_blank" rel="external">Scratchapixel</a> to review and learn graphics. In the first lesson, a constructor</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Vec3(<span class="keyword">const</span> T &amp;xx) : x(xx), y(xx), z(xx) &#123;&#125;</div></pre></td></tr></table></figure>
+<p>in class Vec3 is used. As a weak learner of c++, I’m confused about the parameter passing here. Why using const T &amp;xx?<br>An answer on the stack overflow solved my question.</p>
+<p><a href="https://stackoverflow.com/questions/2627166/difference-between-const-reference-and-normal-parameter" target="_blank" rel="external">post</a><br>What’s the difference?</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">DoWork</span><span class="params">(<span class="keyword">int</span> n)</span></span>;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">DoWork</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> &amp;n)</span></span>;</div></pre></td></tr></table></figure>
+<p>Answer:<br>The difference is more prominent when you are passing a big struct/class.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">struct</span> MyData &#123;</div><div class="line">    <span class="keyword">int</span> a,b,c,d,e,f,g,h;</div><div class="line">    <span class="keyword">long</span> <span class="built_in">array</span>[<span class="number">1234</span>];</div><div class="line">&#125;;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">DoWork</span><span class="params">(MyData md)</span></span>;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">DoWork</span><span class="params">(<span class="keyword">const</span> MyData&amp; md)</span></span>;</div></pre></td></tr></table></figure>
+<p>When you use use ‘normal’ parameter, you pass the parameter by value and hence creating a copy of the parameter you pass. if you are using const reference, you pass it by reference and the original data is not copied.<br>In both cases, the original data cannot be modified from inside the function.<br>EDIT:<br>In certain cases, the original data might be able to get modified as pointed out by Charles Bailey in his answer.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dudandan.com/2017/05/29/const-T-and-xx/" data-id="cj39p7xcw000j2ajkabr2tfbt" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cpp/">cpp</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Speaking-of-rendering" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/04/28/Speaking-of-rendering/" class="article-date">
@@ -100,7 +146,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dudandan.com/2017/04/28/Speaking-of-rendering/" data-id="cj2h69e4i000hibjkxa4f86k5" class="article-share-link">Share</a>
+      <a data-url="http://dudandan.com/2017/04/28/Speaking-of-rendering/" data-id="cj39p7xcz000m2ajkp60qnogk" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/15664/">15664</a></li></ul>
@@ -139,7 +185,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dudandan.com/2017/04/19/Put-on-the-headset/" data-id="cj2h69e48000dibjkw6xa35ik" class="article-share-link">Share</a>
+      <a data-url="http://dudandan.com/2017/04/19/Put-on-the-headset/" data-id="cj39p7xcp000d2ajkc2qycxsi" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/15664/">15664</a></li></ul>
@@ -179,7 +225,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dudandan.com/2017/03/30/6-132-1/" data-id="cj2h69e2s0000ibjkttjxde1q" class="article-share-link">Share</a>
+      <a data-url="http://dudandan.com/2017/03/30/6-132-1/" data-id="cj39p7xbv00012ajk5taqlt0g" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -315,7 +361,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dudandan.com/2017/03/19/Mini-Project-2/" data-id="cj2h69e3x000aibjkrdw7r48v" class="article-share-link">Share</a>
+      <a data-url="http://dudandan.com/2017/03/19/Mini-Project-2/" data-id="cj39p7xcj000a2ajk9755v5gd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/15664/">15664</a></li></ul>
@@ -356,7 +402,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dudandan.com/2017/02/20/Mini-Project-1/" data-id="cj2h69e3f0003ibjkq5ixb7fq" class="article-share-link">Share</a>
+      <a data-url="http://dudandan.com/2017/02/20/Mini-Project-1/" data-id="cj39p7xcf00082ajkl96637uc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/15664/">15664</a></li></ul>
@@ -396,7 +442,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dudandan.com/2017/02/15/Setup-glfw-and-glew/" data-id="cj2h69e4p000mibjk0nzupxba" class="article-share-link">Share</a>
+      <a data-url="http://dudandan.com/2017/02/15/Setup-glfw-and-glew/" data-id="cj39p7xd2000o2ajkytt2xmmj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/notes/">notes</a></li></ul>
@@ -435,7 +481,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dudandan.com/2017/02/08/Thinking-about-IK/" data-id="cj2h69e4v000oibjk5fu8o1m2" class="article-share-link">Share</a>
+      <a data-url="http://dudandan.com/2017/02/08/Thinking-about-IK/" data-id="cj39p7xd5000r2ajk1hykmoyu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/15664/">15664</a></li></ul>
@@ -475,7 +521,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dudandan.com/2017/02/03/Get-to-know-MoCap/" data-id="cj2h69e3u0008ibjk4rulreyo" class="article-share-link">Share</a>
+      <a data-url="http://dudandan.com/2017/02/03/Get-to-know-MoCap/" data-id="cj39p7xc100032ajk7u3bfn04" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/15664/">15664</a></li></ul>
@@ -520,49 +566,10 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dudandan.com/2017/01/26/Hello-Technical-Animation/" data-id="cj2h69e3p0005ibjk7pwncnp8" class="article-share-link">Share</a>
+      <a data-url="http://dudandan.com/2017/01/26/Hello-Technical-Animation/" data-id="cj39p7xcb00052ajki9njbgzw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/15664/">15664</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Reverse-Linked-List-in-Python" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/11/13/Reverse-Linked-List-in-Python/" class="article-date">
-  <time datetime="2016-11-13T06:34:34.000Z" itemprop="datePublished">2016-11-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/13/Reverse-Linked-List-in-Python/">Reverse Linked List in Python</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>A really fancy way to reverse a linked list in Python:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">reverseList</span><span class="params">(head)</span>:</span></div><div class="line">	new_head = <span class="keyword">None</span></div><div class="line">	<span class="keyword">while</span> head:</div><div class="line">		head.next, head, new_head = new_head, head.next, head</div><div class="line">	<span class="keyword">return</span> new_head</div></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dudandan.com/2016/11/13/Reverse-Linked-List-in-Python/" data-id="cj2h69e4l000jibjk7qwtzsos" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
 
     </footer>
   </div>
@@ -587,7 +594,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/15664/">15664</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/notes/">notes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/15664/">15664</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cpp/">cpp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/notes/">notes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li></ul>
     </div>
   </div>
 
@@ -597,7 +604,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li></ul>
     </div>
   </div>
 
@@ -608,6 +615,10 @@ ga('send', 'pageview');
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/05/29/const-T-and-xx/">const T&amp; xx</a>
+          </li>
         
           <li>
             <a href="/2017/04/28/Speaking-of-rendering/">Speaking of rendering</a>
@@ -623,10 +634,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2017/03/19/Mini-Project-2/">Mini Project 2</a>
-          </li>
-        
-          <li>
-            <a href="/2017/02/20/Mini-Project-1/">Mini Project 1</a>
           </li>
         
       </ul>
