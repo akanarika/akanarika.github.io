@@ -1,0 +1,8 @@
+---
+title: Put on the headset
+date: 2017-04-19 01:25:34
+tags: [15664]
+---
+Virtual Reality is a hit today in a variety kinds of industries. Not only animations, games and movies, but also education, even medicine start to make the best of the features of it. VR is not anything I could imagine 5 years ago, however it influences our life much now. As a student majoring in Entertainment Technology, I am lucky enough to have more opportunities to give a touch on VR technology.
+Recall my first attempt on VR, like 4 years ago. I participated in a competition with some VR enthusiast and made a very simple version of portable VR headset, which, I would rather say, is very similar to the Google cardboard. While because people rarely saw VR in real life at that time, not to mention wearing a headset and feeling it, we turned out to get the 3rd place award. I realized then how VR is able to charm people, (who are tired of the real life, maybe not :)).
+Through these semesters, having made, playtested and tried out many VR games, I found out that I am a person who would easily get absorbed in the VR world, (perhaps) same with our professor Pollard, which, I don't think it's a bad thing at all. Because I can go through different experience without stepping out of the buildings. I would feel losing balance standing on a thin wood in the air, cry out when a dinosaur is reaching me and dodge aside if something is hitting me. My friend is totally the opposite to me, so she came up with an idea of creating a jumping experience. Then we spent like no more than 10 minutes to create a scene where we can be thrown from a high building. Then, a fit of dizziness came over me, I suppose, drugs are nothing more than this.
