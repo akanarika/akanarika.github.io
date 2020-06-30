@@ -5,9 +5,9 @@
 # Site
 title: DDD
 subtitle:  -the garbage
-description: garbage
+description: -the garbage
 author: Dandan Du
-language:
+language: en
 timezone:
 
 # URL
@@ -63,7 +63,17 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: DDD
+theme: cactus
+theme_config:
+    colorscheme: light
+    nav:
+        Home: /
+        About: /about/
+        Writing: /archives/
+    social_links:
+        github-alt: https://github.com/akanarika
+        instagram: https://www.instagram.com/_dandandu_/
+        google: mailto:0x000ddd@gmail.com
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
