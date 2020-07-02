@@ -70,6 +70,7 @@ theme_config:
         Home: /
         About: /about/
         Writing: /archives/
+        Demo: /tracer/
     social_links:
         github-alt: https://github.com/akanarika
         instagram: https://www.instagram.com/_dandandu_/
