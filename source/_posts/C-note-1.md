@@ -134,7 +134,7 @@ Aggregation is a weak association. An association is said to be aggregation if b
         }
     };
     ```
-4. Non-type parameters for templates
+4. Non-type parameters for templates, must be const
     ```
     template <class T, int N>
     class mysequence {
@@ -143,6 +143,21 @@ Aggregation is a weak association. An association is said to be aggregation if b
     mysequence <double, 5> myints;
     ```
 5. Because templates are compiled when required, this forces a restriction for multi-file projects: the implementation (definition) of a template class or function must be in the same file as its declaration.
+6. Template specialization. Sometime we want a different behaviour of a function/class template for a particular data type:
+    ```
+    template <class T>
+    T max (T &a, T &b)
+    {
+        return (a > b)? a : b;
+    }
+     
+    template <>
+    int max <int> (int &a, int &b)
+    {
+        cout << "Called ";
+        return (a > b)? a : b;
+    }
+    ```
 
 ### Operator overloading:
 1. cout is an object of ostream class which is a compiler defined class. When we do "cout << obj" where obj is an object of our class, the compiler first looks for an operator function in ostream, then it looks for a global function. One way to overload insertion operator is to modify ostream class which may not be a good idea. So we make a global method.
