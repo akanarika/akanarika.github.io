@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="In the Mini-Project 1, I implemented two of the options, one is CCD IK and the other is Keyframing. CCD IKplatform: Unity 3Ddeliverable: CCD&#x2F;CCD.appuploaded files: CCD&#x2F;UnityFiles.tar CCD&#x2F;CCD.appdescri">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mini Project 1">
+<meta property="og:url" content="https://akanarika.github.io/2017/02/20/Mini-Project-1/index.html">
+<meta property="og:site_name" content="DDD">
+<meta property="og:description" content="In the Mini-Project 1, I implemented two of the options, one is CCD IK and the other is Keyframing. CCD IKplatform: Unity 3Ddeliverable: CCD&#x2F;CCD.appuploaded files: CCD&#x2F;UnityFiles.tar CCD&#x2F;CCD.appdescri">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://akanarika.github.io/images/ccd1.png">
+<meta property="og:image" content="https://akanarika.github.io/images/ccd2.png">
+<meta property="og:image" content="https://akanarika.github.io/images/ccd3.png">
+<meta property="og:image" content="https://akanarika.github.io/images/ccd4.png">
+<meta property="og:image" content="https://akanarika.github.io/images/render3.png">
+<meta property="og:image" content="https://akanarika.github.io/images/render4.png">
+<meta property="og:image" content="https://akanarika.github.io/images/rig.png">
+<meta property="og:image" content="https://akanarika.github.io/images/handle.png">
+<meta property="article:published_time" content="2017-02-20T09:16:21.000Z">
+<meta property="article:modified_time" content="2022-07-28T05:08:01.621Z">
+<meta property="article:author" content="Dandan Du">
+<meta property="article:tag" content="15664">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://akanarika.github.io/images/ccd1.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Mini Project 1</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body class="max-width mx-auto px3 ltr">    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2017/03/19/Mini-Project-2/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2017/02/15/Setup-glfw-and-glew/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://akanarika.github.io/2017/02/20/Mini-Project-1/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://akanarika.github.io/2017/02/20/Mini-Project-1/&text=Mini Project 1"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://akanarika.github.io/2017/02/20/Mini-Project-1/&title=Mini Project 1"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://akanarika.github.io/2017/02/20/Mini-Project-1/&is_video=false&description=Mini Project 1"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Mini Project 1&body=Check out this article: https://akanarika.github.io/2017/02/20/Mini-Project-1/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://akanarika.github.io/2017/02/20/Mini-Project-1/&title=Mini Project 1"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://akanarika.github.io/2017/02/20/Mini-Project-1/&title=Mini Project 1"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://akanarika.github.io/2017/02/20/Mini-Project-1/&title=Mini Project 1"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://akanarika.github.io/2017/02/20/Mini-Project-1/&title=Mini Project 1"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://akanarika.github.io/2017/02/20/Mini-Project-1/&name=Mini Project 1&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://akanarika.github.io/2017/02/20/Mini-Project-1/&t=Mini Project 1"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Mini Project 1
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Dandan Du</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2017-02-20T09:16:21.000Z" itemprop="datePublished">2017-02-20</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/15664/" rel="tag">15664</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>In the Mini-Project 1, I implemented two of the options, one is CCD IK and the other is Keyframing.</p>
+<p><em>CCD IK</em><br>platform: Unity 3D<br>deliverable: CCD/CCD.app<br>uploaded files: CCD/UnityFiles.tar CCD/CCD.app<br>description: This app allows us to simulation CCD IK. In this program, we can choose to generate 1 - 90 joints randomly rotated and scaled by using the slider to the top slider. Also, we can choose the iteration counts by changing the value of the slider below. By hitting create button, a set of joints will appear. By holding key “A,S,D,Q,W,E” on the keyboard, you can move the IK handle to the left, down, right, forward, up, backward. By holding key “J,K,L,U,I,O”, you can move the camera view in the same way. By hitting one of those joints on the screen, we can set the end effector to any of them.<br>process:<br><img src="/images/ccd1.png" alt="create 5 joints"><br><img src="/images/ccd2.png" alt="if the target can&#39;t be reached"><br><img src="/images/ccd3.png" alt="select the end effector"><br><img src="/images/ccd4.png" alt="change the camera view"></p>
+<p><em>Keyframing</em><br>platform: Blender<br>deliverable: Keyframing/squash.blend videos to be uploaded still rendering..<br>description: This is the first model I’ve ever done the modeling, texturing, rigging, animating and rendering all by myself. I implemented two walk cycles, one is the normal one, the other angry.<br><img src="/images/render3.png" alt=""><br><img src="/images/render4.png" alt=""><br>implementation:<br>For the rigging part, I followed a standard rigging style for a bipedal character. And then created two knee pole targets, to make sure that the knees of my character are facing forward all the time. Two feet controllers were added to make it convenient to animate the step motion. And I also added two heel IK handlers to make the rotation of the feet more natural.<br><img src="/images/rig.png" alt="rigging"><br><img src="/images/handle.png" alt="controllers"><br>Then I followed the <a target="_blank" rel="noopener" href="http://graphics.cs.cmu.edu/nsp/course/15464-s17/lectures/Animators_Survival_Kit_walks.pdf">Animators_Survival_Kit</a> to make the walking cycle, which turned out to be not bad, (satisfied me at least XD ). Then the angry walking cycle, since the motion is a bit exaggerated, end up being a little bumpy. Funny.<br><div class="video-container"><iframe src="https://player.vimeo.com/video/204888847" frameborder="0" loading="lazy" allowfullscreen></iframe></div><br><div class="video-container"><iframe src="https://player.vimeo.com/video/204913396" frameborder="0" loading="lazy" allowfullscreen></iframe></div></p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://akanarika.github.io/2017/02/20/Mini-Project-1/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://akanarika.github.io/2017/02/20/Mini-Project-1/&text=Mini Project 1"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://akanarika.github.io/2017/02/20/Mini-Project-1/&title=Mini Project 1"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://akanarika.github.io/2017/02/20/Mini-Project-1/&is_video=false&description=Mini Project 1"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Mini Project 1&body=Check out this article: https://akanarika.github.io/2017/02/20/Mini-Project-1/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://akanarika.github.io/2017/02/20/Mini-Project-1/&title=Mini Project 1"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://akanarika.github.io/2017/02/20/Mini-Project-1/&title=Mini Project 1"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://akanarika.github.io/2017/02/20/Mini-Project-1/&title=Mini Project 1"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://akanarika.github.io/2017/02/20/Mini-Project-1/&title=Mini Project 1"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://akanarika.github.io/2017/02/20/Mini-Project-1/&name=Mini Project 1&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://akanarika.github.io/2017/02/20/Mini-Project-1/&t=Mini Project 1"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2022
+    Dandan Du
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
