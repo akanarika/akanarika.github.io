@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="‘this’ Pointer: Passed as a hidden argument to all non-static member function calls and is available as a local variable within the body of all non-static functions. this is a const pointer. Objects c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ note 2">
+<meta property="og:url" content="https://akanarika.github.io/2020/09/10/C-note-2/index.html">
+<meta property="og:site_name" content="DDD">
+<meta property="og:description" content="‘this’ Pointer: Passed as a hidden argument to all non-static member function calls and is available as a local variable within the body of all non-static functions. this is a const pointer. Objects c">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-09-10T23:59:59.000Z">
+<meta property="article:modified_time" content="2022-07-28T05:08:01.619Z">
+<meta property="article:author" content="Dandan Du">
+<meta property="article:tag" content="cpp">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>C++ note 2</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body class="max-width mx-auto px3 ltr">    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/index.html">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2020/09/10/C-note-3-Singleton/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2020/09/10/C-note-1/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://akanarika.github.io/2020/09/10/C-note-2/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://akanarika.github.io/2020/09/10/C-note-2/&text=C++ note 2"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://akanarika.github.io/2020/09/10/C-note-2/&title=C++ note 2"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://akanarika.github.io/2020/09/10/C-note-2/&is_video=false&description=C++ note 2"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=C++ note 2&body=Check out this article: https://akanarika.github.io/2020/09/10/C-note-2/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://akanarika.github.io/2020/09/10/C-note-2/&title=C++ note 2"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://akanarika.github.io/2020/09/10/C-note-2/&title=C++ note 2"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://akanarika.github.io/2020/09/10/C-note-2/&title=C++ note 2"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://akanarika.github.io/2020/09/10/C-note-2/&title=C++ note 2"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://akanarika.github.io/2020/09/10/C-note-2/&name=C++ note 2&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://akanarika.github.io/2020/09/10/C-note-2/&t=C++ note 2"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%80%98this%E2%80%99-Pointer"><span class="toc-number">1.</span> <span class="toc-text">‘this’ Pointer:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Concept"><span class="toc-number">2.</span> <span class="toc-text">Concept:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Function-overloading"><span class="toc-number">3.</span> <span class="toc-text">Function overloading:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Static"><span class="toc-number">4.</span> <span class="toc-text">Static:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Inheritence"><span class="toc-number">5.</span> <span class="toc-text">Inheritence:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Virtual"><span class="toc-number">6.</span> <span class="toc-text">Virtual:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Const"><span class="toc-number">7.</span> <span class="toc-text">Const:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#New-amp-Delete"><span class="toc-number">8.</span> <span class="toc-text">New &amp; Delete:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Exception-handling"><span class="toc-number">9.</span> <span class="toc-text">Exception handling:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Friend"><span class="toc-number">10.</span> <span class="toc-text">Friend:</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        C++ note 2
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Dandan Du</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-09-10T23:59:59.000Z" itemprop="datePublished">2020-09-10</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/cpp/" rel="tag">cpp</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h3 id="‘this’-Pointer"><a href="#‘this’-Pointer" class="headerlink" title="‘this’ Pointer:"></a>‘this’ Pointer:</h3><ol>
+<li>Passed as a hidden argument to all non-static member function calls and is available as a local variable within the body of all non-static functions.</li>
+<li><code>this</code> is a const pointer.</li>
+<li>Objects can destroy themselves by calling the following code <code>delete this;</code>. </li>
+</ol>
+<h3 id="Concept"><a href="#Concept" class="headerlink" title="Concept:"></a>Concept:</h3><ol>
+<li><strong>C++ polymorphism</strong> means that a call to a member function will cause a different function to be executed depending on the type of object that invokes the function.</li>
+</ol>
+<h3 id="Function-overloading"><a href="#Function-overloading" class="headerlink" title="Function overloading:"></a>Function overloading:</h3><ol>
+<li>In C++, following function declarations <a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/function-overloading-in-c/">cannot be overloaded</a>.<ul>
+<li>Function declarations that differ only in the return type.</li>
+<li>Member function declarations with the same name and the name parameter-type-list cannot be overloaded if any of them is a static member function declaration.</li>
+<li>Parameter declarations that differ only in a pointer * versus an array [] are equivalent.</li>
+<li>Parameter declarations that differ only in that one is a function type and the other is a pointer to the same function type are equivalent.</li>
+<li>Parameter declarations that differ only in the presence or absence of const and/or volatile are equivalent.</li>
+<li>Two parameter declarations that differ only in their default arguments are equivalent. </li>
+</ul>
+</li>
+<li>C++ allows member methods to be overloaded on the basis of const type. Overloading on the basis of const type can be useful when a function return reference or pointer.</li>
+</ol>
+<h3 id="Static"><a href="#Static" class="headerlink" title="Static:"></a>Static:</h3><ol>
+<li>Static methods can only access static members (data and methods)</li>
+</ol>
+<h3 id="Inheritence"><a href="#Inheritence" class="headerlink" title="Inheritence:"></a>Inheritence:</h3><ol>
+<li>Assume that an integer takes 4 bytes: <code>sizeof(derived)</code> is 80. Since b1 and b2 both inherit from class base, two copies of class base are there in class derived. <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class base &#123;</span><br><span class="line">    int arr[10];</span><br><span class="line">&#125;;</span><br><span class="line">class b1: public base &#123; &#125;;</span><br><span class="line">class b2: public base &#123; &#125;;</span><br><span class="line">class derived: public b1, public b2 &#123;&#125;;</span><br></pre></td></tr></table></figure></li>
+<li>Assume that an integer takes 4 bytes: <code>sizeof(derived)</code> is 48. 8 extra bytes are for bookkeeping information stored by the compiler. <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class base &#123;</span><br><span class="line">  int arr[10];     </span><br><span class="line">&#125;;</span><br><span class="line">class b1: virtual public base &#123; &#125;;</span><br><span class="line">class b2: virtual public base &#123; &#125;;</span><br><span class="line">class derived: public b1, public b2 &#123;&#125;;</span><br></pre></td></tr></table></figure></li>
+<li>If there is multilevel inheritance, then function is linearly searched up in the inheritance hierarchy until a matching function is found.</li>
+<li>A base class pointer can point to a derived class object, but we can only access base class member or virtual functions using the base class pointer.</li>
+<li>If a derived class writes its own method, then all functions of base class with same name become hidden, even if signaures of base class functions are different. We can access base class functions using scope resolution operator even if they are made hidden by a derived class function. <code>Derived d; d.Base::fun(5);</code></li>
+<li>When we assign an object of derived class to an object of base type, the derived class object is <strong>sliced</strong> off and all the data members inherited from base class are copied.</li>
+<li>The base class members cannot be directly assigned using initializer list. We should call the base class constructor in order to initialize base class members.</li>
+<li>This is a typical example of diamond problem of multiple inheritance. Here the base class member ‘a’ is inherited through both Derived1 and Derived2. So there are two copies of ‘a’ in DerivedDerived which makes the statement “cout &lt;&lt; a;” ambiguous. <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">class Base</span><br><span class="line">&#123;</span><br><span class="line">protected:</span><br><span class="line">    int a;</span><br><span class="line">public:</span><br><span class="line">    Base() &#123;a = 0;&#125;</span><br><span class="line">&#125;;</span><br><span class="line">class Derived1:  public Base</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">    int c;</span><br><span class="line">&#125;;</span><br><span class="line">class Derived2:  public Base</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">    int c;</span><br><span class="line">&#125;;</span><br><span class="line">class DerivedDerived: public Derived1, public Derived2</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">    void show()  &#123;   cout &lt;&lt; a;  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">int main(void)</span><br><span class="line">&#123;</span><br><span class="line">    DerivedDerived d;</span><br><span class="line">    d.show();</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="Virtual"><a href="#Virtual" class="headerlink" title="Virtual:"></a>Virtual:</h3><ol>
+<li>If a class has a pure virtual function, it becomes an abstract class and an instance of it cannot be created.</li>
+<li>If we don’t override the pure virtual function in derived class, then derived class also becomes abstract class.</li>
+<li>There is nothing like Virtual Constructor. Making constructors virtual doesn’t make sense as constructor is responsible for creating an object and it can’t be delegated to any other object by virtual keyword means.</li>
+<li>A destructor can be virtual. We may want to call appropriate destructor when a base class pointer points to a derived class object and we delete the object. If destructor is not virtual, then only the base class destructor may be called. If the destructor is vitrual, the derived class destructor is called which in turn calls base class destructor. <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Base *Var = new Derived();</span><br><span class="line">delete Var;</span><br><span class="line">// but below will call both</span><br><span class="line">&#123;</span><br><span class="line">    Derived Var;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>Compiler places a VPTR with every object.</li>
+<li>When a class has a virtual function, functions with same signature in all descendant classes automatically become virtual. </li>
+</ol>
+<h3 id="Const"><a href="#Const" class="headerlink" title="Const:"></a>Const:</h3><ol>
+<li>A const object can only call const functions.</li>
+<li><code>const char* a = &quot;Anthony&quot;;</code><br> is: <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const char string_literal[] = &quot;Anthony&quot;;</span><br><span class="line">const char *a = string_literal;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="New-amp-Delete"><a href="#New-amp-Delete" class="headerlink" title="New &amp; Delete:"></a>New &amp; Delete:</h3><ol>
+<li>It is undefined behavior to call delete twice on a pointer. Anything can happen, the program may crash or produce nothing.</li>
+</ol>
+<h3 id="Exception-handling"><a href="#Exception-handling" class="headerlink" title="Exception handling:"></a>Exception handling:</h3><ol>
+<li>try, catch, and throw:<br> <strong>throw</strong> − A program throws an exception when a problem shows up. This is done using a throw keyword.<br> <strong>catch</strong> − A program catches an exception with an exception handler at the place in a program where you want to handle the problem. The catch keyword indicates the catching of an exception.<br> <strong>try</strong> − A try block identifies a block of code for which particular exceptions will be activated. It’s followed by one or more catch blocks.</li>
+<li>If both base and derived classes are caught as exceptions then catch block of derived class must appear before the base class. If we put base class first then the derived class catch block will never be reached. </li>
+<li>Note that the implicit type conversion doesn’t happen when exceptions are caught. eg. The character is not automatically converted to int.</li>
+<li>It is compiler error to put catch all block before any other catch. The catch(…) must be the last catch block.</li>
+<li>The statement <code>throw;</code> is used to re-throw an exception: <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">try &#123;</span><br><span class="line">    try</span><br><span class="line">    &#123;</span><br><span class="line">        throw 20;</span><br><span class="line">    &#125;</span><br><span class="line">    catch (int n)</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; &quot;Inner Catchn&quot;;</span><br><span class="line">        throw;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">catch (int x)</span><br><span class="line">&#123;</span><br><span class="line">    cout &lt;&lt; &quot;Outer Catchn&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>When an object is created inside a try block, destructor for the object is called before control is transferred to catch block.</li>
+<li>When an exception is thrown and not caught, the program terminates abnormally.</li>
+</ol>
+<h3 id="Friend"><a href="#Friend" class="headerlink" title="Friend:"></a>Friend:</h3><ol>
+<li>Friendship is not inherited.</li>
+</ol>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/index.html">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%80%98this%E2%80%99-Pointer"><span class="toc-number">1.</span> <span class="toc-text">‘this’ Pointer:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Concept"><span class="toc-number">2.</span> <span class="toc-text">Concept:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Function-overloading"><span class="toc-number">3.</span> <span class="toc-text">Function overloading:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Static"><span class="toc-number">4.</span> <span class="toc-text">Static:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Inheritence"><span class="toc-number">5.</span> <span class="toc-text">Inheritence:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Virtual"><span class="toc-number">6.</span> <span class="toc-text">Virtual:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Const"><span class="toc-number">7.</span> <span class="toc-text">Const:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#New-amp-Delete"><span class="toc-number">8.</span> <span class="toc-text">New &amp; Delete:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Exception-handling"><span class="toc-number">9.</span> <span class="toc-text">Exception handling:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Friend"><span class="toc-number">10.</span> <span class="toc-text">Friend:</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://akanarika.github.io/2020/09/10/C-note-2/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://akanarika.github.io/2020/09/10/C-note-2/&text=C++ note 2"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://akanarika.github.io/2020/09/10/C-note-2/&title=C++ note 2"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://akanarika.github.io/2020/09/10/C-note-2/&is_video=false&description=C++ note 2"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=C++ note 2&body=Check out this article: https://akanarika.github.io/2020/09/10/C-note-2/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://akanarika.github.io/2020/09/10/C-note-2/&title=C++ note 2"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://akanarika.github.io/2020/09/10/C-note-2/&title=C++ note 2"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://akanarika.github.io/2020/09/10/C-note-2/&title=C++ note 2"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://akanarika.github.io/2020/09/10/C-note-2/&title=C++ note 2"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://akanarika.github.io/2020/09/10/C-note-2/&name=C++ note 2&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://akanarika.github.io/2020/09/10/C-note-2/&t=C++ note 2"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2022
+    Dandan Du
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/index.html">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="Constructor: In C++, if we do not write our own, then compiler automatically creates a default constructor, a copy constructor and an assignment operator for every class. If we write any constructor,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ note 1">
+<meta property="og:url" content="https://akanarika.github.io/2020/09/10/C-note-1/index.html">
+<meta property="og:site_name" content="DDD">
+<meta property="og:description" content="Constructor: In C++, if we do not write our own, then compiler automatically creates a default constructor, a copy constructor and an assignment operator for every class. If we write any constructor,">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-09-10T07:38:08.000Z">
+<meta property="article:modified_time" content="2022-07-28T05:08:01.618Z">
+<meta property="article:author" content="Dandan Du">
+<meta property="article:tag" content="cpp">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>C++ note 1</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body class="max-width mx-auto px3 ltr">    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/index.html">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2020/09/10/C-note-2/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2020/07/25/SDF-basics-2/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://akanarika.github.io/2020/09/10/C-note-1/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://akanarika.github.io/2020/09/10/C-note-1/&text=C++ note 1"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://akanarika.github.io/2020/09/10/C-note-1/&title=C++ note 1"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://akanarika.github.io/2020/09/10/C-note-1/&is_video=false&description=C++ note 1"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=C++ note 1&body=Check out this article: https://akanarika.github.io/2020/09/10/C-note-1/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://akanarika.github.io/2020/09/10/C-note-1/&title=C++ note 1"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://akanarika.github.io/2020/09/10/C-note-1/&title=C++ note 1"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://akanarika.github.io/2020/09/10/C-note-1/&title=C++ note 1"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://akanarika.github.io/2020/09/10/C-note-1/&title=C++ note 1"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://akanarika.github.io/2020/09/10/C-note-1/&name=C++ note 1&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://akanarika.github.io/2020/09/10/C-note-1/&t=C++ note 1"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Constructor"><span class="toc-number">1.</span> <span class="toc-text">Constructor:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Destructor"><span class="toc-number">2.</span> <span class="toc-text">Destructor:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Reference"><span class="toc-number">3.</span> <span class="toc-text">Reference:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Class"><span class="toc-number">4.</span> <span class="toc-text">Class:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Template"><span class="toc-number">5.</span> <span class="toc-text">Template:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Operator-overloading"><span class="toc-number">6.</span> <span class="toc-text">Operator overloading:</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        C++ note 1
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Dandan Du</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-09-10T07:38:08.000Z" itemprop="datePublished">2020-09-10</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/cpp/" rel="tag">cpp</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h3 id="Constructor"><a href="#Constructor" class="headerlink" title="Constructor:"></a>Constructor:</h3><ol>
+<li>In C++, if we do not write our own, then compiler automatically creates a default constructor, a copy constructor and an assignment operator for every class. If we write any constructor, then compiler doesn’t create the default constructor.</li>
+<li>When is copy constructor called?<ul>
+<li>When an object of the class is returned by value.</li>
+<li>When an object of the class is passed (to a function) by value as an argument.</li>
+<li>When an object is constructed based on another object of the same class.</li>
+<li>When compiler generates a temporary object.</li>
+<li>(Note: It is however, not guaranteed that a copy constructor will be called in all these cases, because the C++ Standard allows the compiler to optimize the copy away in certain cases, one example being the return value optimization (sometimes referred to as RVO). <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Copy_elision#Return_value_optimization">RVO</a> is a compiler optimization that involves eliminating the temporary object created to hold a function’s return value.)</li>
+</ul>
+</li>
+<li>When should we write our own assignment operator in C++?<ul>
+<li>The answer is same as Copy Constructor. If a class doesn’t contain pointers, then there is no need to write assignment operator and copy constructor. </li>
+<li>(Note: <a target="_blank" rel="noopener" href="https://isocpp.org/wiki/faq/assignment-operators">Self assignment</a>)</li>
+</ul>
+</li>
+<li>Assignment operator &amp; Copy constructor <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Point</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Point</span>() &#123; cout &lt;&lt; <span class="string">&quot;Normal Constructor calledn&quot;</span>; &#125;</span><br><span class="line">    <span class="built_in">Point</span>(<span class="type">const</span> Point &amp;t) &#123; cout &lt;&lt; <span class="string">&quot;Copy constructor calledn&quot;</span>; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line">Point *t1, *t2;   <span class="comment">// No constructor call</span></span><br><span class="line">t1 = <span class="keyword">new</span> <span class="built_in">Point</span>(<span class="number">10</span>, <span class="number">15</span>);  <span class="comment">// Normal constructor call</span></span><br><span class="line">t2 = <span class="keyword">new</span> <span class="built_in">Point</span>(*t1);   <span class="comment">// Copy constructor call </span></span><br><span class="line">Point t3 = *t1;  <span class="comment">// Copy Constructor call</span></span><br><span class="line">                <span class="comment">// (&#x27;X b = a;&#x27; calls copy constructor</span></span><br><span class="line">                <span class="comment">// and is same as &#x27;X b(a);&#x27;)</span></span><br><span class="line">Point t4;   <span class="comment">// Normal Constructor call</span></span><br><span class="line">t4 = t3;   <span class="comment">// Assignment operator call </span></span><br></pre></td></tr></table></figure></li>
+<li>Copy constructor: Objects must be passed by reference in copy constructors. Compiler checks for this and produces compiler error if not passed by reference. Also, copy constructor argument should be const. <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Point</span> &#123;</span><br><span class="line">    <span class="type">int</span> x;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Point</span>(<span class="type">int</span> x) &#123; <span class="keyword">this</span>-&gt;x = x; &#125;</span><br><span class="line">    <span class="built_in">Point</span>(<span class="type">const</span> Point p) &#123; x = p.x;&#125; <span class="comment">// Compiler Error: p must be passed by reference</span></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">getX</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> x; &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+<li>When do we use <a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/when-do-we-use-initializer-list-in-c/">Initializer List</a> in C++?<ul>
+<li>For initialization of non-static const data members.</li>
+<li>Reference members must be initialized using Initializer List.</li>
+<li>For initialization of member objects which do not have default constructor.</li>
+<li>For initialization of base class members.</li>
+<li>When constructor’s parameter name is same as data member, either use this pointer or Initializer List</li>
+<li>Performance reasons: It is better to initialize all class variables in Initializer List instead of assigning values inside body.</li>
+</ul>
+</li>
+<li>Constructors cannot be virtual.</li>
+<li>If a class has a constructor which can be called with a single argument, then this constructor becomes conversion constructor because such a constructor allows automatic conversion to the class being constructed. </li>
+<li>Consider the following statement <code>Test *ptr = new Test;</code> There are actually two things that happen in the above statement–memory allocation and object construction; the new keyword is responsible for both. One step in the process is to call operator new in order to allocate memory; the other step is to actually invoke the constructor. Operator new only allows us to change the memory allocation method, but does not do anything with the constructor calling method. Keyword new is responsible for calling the constructor, not operator new.</li>
+</ol>
+<h3 id="Destructor"><a href="#Destructor" class="headerlink" title="Destructor:"></a>Destructor:</h3><ol>
+<li>Destructors can be private. then <code>Test t;</code> would compile error, <code>Test *t;</code> would be fine.</li>
+<li>There can be only one destructor in a class.</li>
+</ol>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h3><ol>
+<li><p>When a function returns by reference, it can be used as lvalue. Since x is a static variable, it is shared among function calls and the initialization line “static int x = 10;” is executed only once. The function call fun() = 30, modifies x to 30. The next call “cout &lt;&lt; fun()” returns the modified value.</p>
+ <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> &amp;<span class="title">fun</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">static</span> <span class="type">int</span> x = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">fun</span>() = <span class="number">30</span>;</span><br><span class="line">    cout &lt;&lt; <span class="built_in">fun</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Since we return reference to a local variable, the memory location becomes invalid after function call is over. Hence it may result in segmentation fault runtime error.</p>
+ <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> &amp;<span class="title">fun</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> x = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">fun</span>() = <span class="number">30</span>;</span><br><span class="line">    cout &lt;&lt; <span class="built_in">fun</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="Class"><a href="#Class" class="headerlink" title="Class:"></a>Class:</h3><ol>
+<li>The size of an empty class not zero, it is 1 byte generally. It is nonzero to ensure that the two different objects will have different addresses.</li>
+<li>The static variables are stored in the data segment of the memory. The data segment is a part of the virtual address space of a program. All the static variables that do not have an explicit initialization or are initialized to zero are stored in the uninitialized data segment( also known as the BSS segment).</li>
+<li>Which of the following is not correct for virtual function in C++ ?<br>(A) Must be declared in public section of class.<br>(B) Virtual function <strong>can’t</strong> be static.<br>(C) Virtual function should be accessed using pointers.<br>(D) Virtual function is defined in base class.</li>
+<li>Association, Composition, Aggregation<ul>
+<li><strong>Association</strong><br>Association refers to the relationship between multiple objects. It refers to how objects are related to each other and how they are using each other’s functionality. Composition and aggregation are two types of association.</li>
+<li><strong>Composition</strong><br>The composition is the strong type of association. An association is said to composition if an Object owns another object and another object cannot exist without the owner object. Consider the case of Human having a heart. Here Human object contains the heart and heart cannot exist without Human.</li>
+<li><strong>Aggregation</strong><br>Aggregation is a weak association. An association is said to be aggregation if both Objects can exist independently. For example, a Team object and a Player object. The team contains multiple players but a player can exist without a team.</li>
+</ul>
+</li>
+<li>Interfaces (Abstract Classes)<ul>
+<li>A class is made abstract by declaring at least one of its functions as pure virtual function.</li>
+<li>Abstract classes cannot be used to instantiate objects and serves only as an interface. Attempting to instantiate an object of an abstract class causes a compilation error.</li>
+<li>If a subclass of an ABC needs to be instantiated, it has to implement each of the virtual functions, which means that it supports the interface declared by the ABC. Failure to override a pure virtual function in a derived class, then attempting to instantiate objects of that class, is a compilation error.</li>
+</ul>
+</li>
+</ol>
+<h3 id="Template"><a href="#Template" class="headerlink" title="Template:"></a>Template:</h3><ol>
+<li>When the compiler encounters this call to a template function, it uses the template to automatically generate a function replacing each appearance of myType by the type passed as the actual template parameter (int in this case) and then calls it. This process is automatically performed by the compiler and is invisible to the programmer.</li>
+<li>The format for declaring function templates with type parameters is (indistinct): <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">template &lt;class identifier&gt; function_declaration;</span><br><span class="line">template &lt;typename identifier&gt; function_declaration;</span><br></pre></td></tr></table></figure></li>
+<li>Template for Class <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">template &lt;class T&gt;</span><br><span class="line">class mypair &#123;</span><br><span class="line">    T values [2];</span><br><span class="line">  public:</span><br><span class="line">    mypair (T first, T second)</span><br><span class="line">    &#123;</span><br><span class="line">      values[0]=first; values[1]=second;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+<li>Non-type parameters for templates, must be const <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">template &lt;class T, int N&gt;</span><br><span class="line">class mysequence &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;;</span><br><span class="line">mysequence &lt;double, 5&gt; myints;</span><br></pre></td></tr></table></figure></li>
+<li>Because templates are compiled when required, this forces a restriction for multi-file projects: the implementation (definition) of a template class or function must be in the same file as its declaration.</li>
+<li>Template specialization. Sometime we want a different behaviour of a function/class template for a particular data type: <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">template &lt;class T&gt;</span><br><span class="line">T max (T &amp;a, T &amp;b)</span><br><span class="line">&#123;</span><br><span class="line">    return (a &gt; b)? a : b;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">template &lt;&gt;</span><br><span class="line">int max &lt;int&gt; (int &amp;a, int &amp;b)</span><br><span class="line">&#123;</span><br><span class="line">    cout &lt;&lt; &quot;Called &quot;;</span><br><span class="line">    return (a &gt; b)? a : b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="Operator-overloading"><a href="#Operator-overloading" class="headerlink" title="Operator overloading:"></a>Operator overloading:</h3><ol>
+<li>cout is an object of ostream class which is a compiler defined class. When we do “cout &lt;&lt; obj” where obj is an object of our class, the compiler first looks for an operator function in ostream, then it looks for a global function. One way to overload insertion operator is to modify ostream class which may not be a good idea. So we make a global method. <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ostream &amp; operator &lt;&lt; (ostream &amp;out, const Complex &amp;c)</span><br><span class="line">&#123;</span><br><span class="line">    out &lt;&lt; c.real;</span><br><span class="line">    out &lt;&lt; &quot;+i&quot; &lt;&lt; c.imag;</span><br><span class="line">    return out;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/index.html">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Constructor"><span class="toc-number">1.</span> <span class="toc-text">Constructor:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Destructor"><span class="toc-number">2.</span> <span class="toc-text">Destructor:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Reference"><span class="toc-number">3.</span> <span class="toc-text">Reference:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Class"><span class="toc-number">4.</span> <span class="toc-text">Class:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Template"><span class="toc-number">5.</span> <span class="toc-text">Template:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Operator-overloading"><span class="toc-number">6.</span> <span class="toc-text">Operator overloading:</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://akanarika.github.io/2020/09/10/C-note-1/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://akanarika.github.io/2020/09/10/C-note-1/&text=C++ note 1"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://akanarika.github.io/2020/09/10/C-note-1/&title=C++ note 1"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://akanarika.github.io/2020/09/10/C-note-1/&is_video=false&description=C++ note 1"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=C++ note 1&body=Check out this article: https://akanarika.github.io/2020/09/10/C-note-1/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://akanarika.github.io/2020/09/10/C-note-1/&title=C++ note 1"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://akanarika.github.io/2020/09/10/C-note-1/&title=C++ note 1"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://akanarika.github.io/2020/09/10/C-note-1/&title=C++ note 1"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://akanarika.github.io/2020/09/10/C-note-1/&title=C++ note 1"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://akanarika.github.io/2020/09/10/C-note-1/&name=C++ note 1&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://akanarika.github.io/2020/09/10/C-note-1/&t=C++ note 1"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2022
+    Dandan Du
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/index.html">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
